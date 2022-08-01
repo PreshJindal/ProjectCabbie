@@ -29,3 +29,26 @@ What it looks like ?
 * Which loginID refers to which login type happens implicitly 
 
 ![login](https://user-images.githubusercontent.com/77404110/182171021-35a0bd67-5e28-4240-833c-b8c4bd822099.png)
+
+# Vehicle Owner Dashboard
+* This has 2 sections namely
+  * Profile : This includes information about the vehicle owner. For example Adhaar Number, his photo ID, his mobile number etc.
+  * Vehicle Info : This includes all the data about the vehicle owned by the partner 
+* All the data is again present in MySQL table 
+
+![VehicleOwnerDash](https://user-images.githubusercontent.com/77404110/182173617-cbc65e34-d2f4-4139-9ef2-df3cf77a21c1.png)
+
+# Vehicle Provider
+* This page is specifically created and designed for clients 
+* Through this page they can choose their location, their seat requirement and the results are then showed according to the choices selected by the client
+* Results can be filtered through filter tag
+
+![vehicleProvider](https://user-images.githubusercontent.com/77404110/182174182-f2481ffe-b2e9-403f-bbfc-79e2eb245638.png)
+
+# Admin Page
+* This page is not included in the flow of the website but it can be accessed through a special URL localhost:PORT_NO/admin-vau
+* This page has 2 sections
+  * Vehicle Owners : This will include data table of all the vehicle owners you manage
+  * Clients : This will include data table of all the clients who book through your website
+  
+![admin](https://user-images.githubusercontent.com/77404110/182175001-2e4b08d2-cc77-41ba-b10f-dba185011781.png)
