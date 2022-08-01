@@ -15,8 +15,8 @@ What it looks like ?
 ![landing](https://user-images.githubusercontent.com/77404110/182168487-2ec6760d-14cd-4f94-8c39-d6b1d5010493.png)
 
 # Signup Page
-* This has all validations neccessary 
-* Validates data from MySQL table i.e. if emailID already used, you cannot register with the same emailID again
+* This has all validations necessary 
+* Validates data from MySQL table i.e. if email ID already used, you cannot register with the same email ID again
 * Once signed up, all the data goes to a MySQL table in the back-end
 
 ![signup](https://user-images.githubusercontent.com/77404110/182168580-482ce7df-25bb-4802-92c3-8bd04427beac.png)
@@ -24,16 +24,16 @@ What it looks like ?
 # Login Page
 * This also validates data from MySQL table and if not present, Error message appears
 * There are 2 types of login 
-    * For vehicle owners
-    * For clients i.e. people who will book cabs
+    * **For vehicle owners**
+    * **For clients** i.e. people who will book cabs
 * Which loginID refers to which login type happens implicitly 
 
 ![login](https://user-images.githubusercontent.com/77404110/182171021-35a0bd67-5e28-4240-833c-b8c4bd822099.png)
 
 # Vehicle Owner Dashboard
 * This has 2 sections namely
-  * Profile : This includes information about the vehicle owner. For example Adhaar Number, his photo ID, his mobile number etc.
-  * Vehicle Info : This includes all the data about the vehicle owned by the partner 
+  * **Profile** : This includes information about the vehicle owner. For example Adhaar Number, his photo ID, his mobile number etc.
+  * **Vehicle Info** : This includes all the data about the vehicle owned by the partner 
 * All the data is again present in MySQL table 
 
 ![VehicleOwnerDash](https://user-images.githubusercontent.com/77404110/182173617-cbc65e34-d2f4-4139-9ef2-df3cf77a21c1.png)
@@ -48,7 +48,7 @@ What it looks like ?
 # Admin Page
 * This page is not included in the flow of the website but it can be accessed through a special URL localhost:PORT_NO/admin-vau
 * This page has 2 sections
-  * Vehicle Owners : This will include data table of all the vehicle owners you manage
-  * Clients : This will include data table of all the clients who book through your website
+  * **Vehicle Owners** : This will include data table of all the vehicle owners you manage
+  * **Clients** : This will include data table of all the clients who book through your website
   
 ![admin](https://user-images.githubusercontent.com/77404110/182175001-2e4b08d2-cc77-41ba-b10f-dba185011781.png)
