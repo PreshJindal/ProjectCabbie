@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/angular.min.js" ></script>
+    <script src="js/jquery-1.8.2.min.js">
+    </script>
+    <title>Document</title>
+    <script>
+        var myModule = angular.module("myModule1",[]);
+        var myController = myModule.controller("myController1",function($scope,$http){
+            $scope.doFetchAll = function(){
+                $http.get("/FetchOwners").then(okFx,notOkFx);
+                function okFx(response){
+                    $scope.jsonAry = response.data;
+                }
+                function notOkFx(response){
+                    alert("oops! Data not recieved from the server");
+                }
+            }
+        })
+    </script>
+</head>
+
+<body style="background-color: rgb(201, 214, 153);" ng-app="myModule1" ng-controller="myController1">
+    <div class="ownertable-heading">
+        Vehicle Owners Table
+    </div>
+    <div class="mid-button">
+        <input type="button" class="btn btn-primary btn-lg" value="View all Owners" ng-click="doFetchAll();">
+    </div>
+
+    <div class="tablexD">
+        <table border="1" width="1400">
+            <tr>
+                <th>Sr.Number</th>
+                <th>User ID</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
+                <th>ID Type</th>
+                <th>ID Number</th>
+                <th>Mobile Number</th>
+                <th>Picture</th>
+            </tr>
+            <tr ng-repeat="obj in jsonAry">
+                <td>{{$index}}</td>
+                <td>{{obj.uid}}</td>
+                <td>{{obj.address}}</td>
+                <td>{{obj.city}}</td>
+                <td>{{obj.state}}</td>
+                <td>{{obj.zip}}</td>
+                <td>{{obj.idtype}}</td>
+                <td>{{obj.idnumber}}</td>
+                <td>{{obj.mobnumber}}</td>  
+                <td><img src="uploads/{{obj.picpath}}" alt="" width="50" height="50"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

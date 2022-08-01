@@ -1,0 +1,185 @@
+.signup-btn{
+    margin: 10px;
+}
+
+.topBar{
+    background-color: rgb(37, 37, 37);
+}
+
+.signup-box{
+    width: 600px;
+    height: 400px   ;
+    margin: auto;
+    margin-top: 50px;   
+}
+.su-topbar{
+    width: 600px;
+    background-color: rgb(142, 143, 214);
+    margin: auto;
+    height: 50px;
+}
+
+.login-box{
+    width: 600px;
+    height: 400px   ;
+    margin: auto;
+    margin-top: 200px;
+}
+
+.colo{
+    color: rgb(245, 196, 196);
+}
+
+.sign-login{
+    color: rgb(78, 68, 68);
+    font-weight: bolder;
+}
+
+.card-place{
+    display: flex;
+    padding: 60px;
+    margin: auto;
+    width: 800px;
+    justify-content: space-between;
+}
+
+.heading-owner-db{
+    font-size: xx-large;
+    margin: auto;
+    width: 400px;
+    padding: 10px;
+}
+.line{
+    height: 10px;
+    margin: auto;
+    padding: 3px;
+}
+
+.cl{
+    margin-top: 10px;
+}
+
+.aaa{
+    text-decoration: none;
+    color: white;
+}
+
+.aaa:hover{
+    color: pink;
+}
+
+.box-profile{
+    width: 800px;
+    padding: 40px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.vehicle-box{
+    width: 800px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.admin-heading{
+    font-size: xx-large;
+    margin: auto;
+    width: 200px;
+    padding: 10px
+}
+
+.ownertable-heading{
+    font-size: xx-large;
+    margin: auto;
+    width: 400px;
+    padding: 10px
+}
+
+.mid-button{
+    margin: auto;
+    width: 300px;
+}
+
+.tablexD{
+    padding-top: 30px;
+    width:1400px;
+    margin: auto;
+}
+
+.vehicle-prov-head{
+    font-size: xx-large;
+    margin: auto;
+    width: 300px;
+    padding: 10px
+}
+
+.citySelector{
+    padding: 30px;
+    width: 800px;
+    margin: auto;
+}
+
+.spacer{
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+#fetchme{
+    margin-top: 20px;
+}
+
+.UserTitle{
+    margin: auto;
+    font-size: large;
+    background-color: rgb(48, 47, 47);
+    color: white;
+}
+
+.containeer{
+    display: flex;
+    width: 800px;;
+    height: 500px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    box-shadow:  -10px 10px 10px 8px #888888;
+}
+
+
+
+.reachUs{
+    background-color: rgb(48, 47, 47);
+    font-size: large;
+    color: white;
+}
+
+.OurDevs{
+    background-color: rgb(48, 47, 47);
+    font-size: large;
+    color: white;
+}
+
+.bgimagee{
+    width: 1517px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.flexContain{
+    display: flex;
+    width: 800px;;
+    height: 400px;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.copyright{
+    background-color: rgb(48, 47, 47);
+    font-size: large;
+    color: white;
+}

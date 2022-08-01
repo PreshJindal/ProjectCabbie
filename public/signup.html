@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Document</title>
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            $("#txtEid").blur(function () {
+                var uidVal = $("#txtEid").val();
+                var url = "/chkUid?x=" + uidVal;
+
+                $.get(url, function (resultJSONkuch) {
+                    if (resultJSONkuch.length == 0) {
+                       
+                        alert("Available");
+                    }
+                    else {
+                        alert("Email ID already in use");
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+
+<body style="background-image: url(pics/Wallpaper-4k-Porsche-Minimalist-4k-4k-wallpapers-artist-.jpg);">
+    <div class="bgimage">
+        <div class="su-topbar">
+            <center>
+                <h2>Signup</h2>
+            </center>
+        </div>
+        <div class="signup-box">
+            <form method="POST" enctype="multipart/form-data">
+                <div class="mb-5">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="text" name="txtEid" class="form-control" id="txtEid" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-5">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" name="txtpwd" class="form-control" id="exampleInputPassword1">
+                </div>
+                <select class="form-select form-select-lg mb-3" name="combocat" aria-label=".form-select-lg example">
+                    <option selected disabled>Select Category</option>
+                    <option value="VehicleOwner">Vehicle Owner</option>
+                    <option value="Client">Client</option>
+                </select>
+                <div class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Agree to Terms and Conditions</label>
+                </div>
+                <div class="mb-5">
+                    <label for="exampleInputPassword1" class="form-label sign-login">Already have an account? <a
+                            href="/login">Login here</a></label>
+                </div>
+                <input type="submit" name="submit" value="Submit" class="btn btn-primary" formaction="/signup-user">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

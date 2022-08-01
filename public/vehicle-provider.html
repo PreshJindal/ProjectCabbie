@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+
+        var myModule = angular.module("myModule1", []);
+        var myController = myModule.controller("myController1", function ($scope, $http) {
+            $scope.fillCity = function () {
+                $http.get("/fetchCities").then(okFx, notOkFx);
+                function okFx(response) {
+                    $scope.jsonAryCity = response.data;
+
+                }
+                function notOkFx(response) {
+                    alert(response.data);
+                }
+            }
+
+            $scope.DofetchAll = function () {
+                var x = $scope.selCity;
+                alert(x + "  ");
+                $http.get("/fetchVehicle?city=" + x).then(okFx, notOkFx);
+                function okFx(response) {
+                    $scope.jsonAryVehicle = response.data;
+                }
+                function notOkFx(response) {
+                    alert(response.data);
+                }
+            }
+
+            $scope.doShowMobile = function (obj) {
+                $scope.splObj = obj;
+            }
+        })
+    </script>
+</head>
+
+<body ng-app="myModule1" ng-controller="myController1" ng-init=fillCity();
+    style="background-image: url(pics/palms-leaves-white-wood-background-with-space-right.jpg);">
+    <div class="vehicle-prov-head">
+        Vehicle Provider
+    </div>
+    <div class="spacer">
+        <div class="col-md-3">
+            City :
+            <select class="form-select" ng-model="selCity" style="width: 200px;" required>
+                <option selected disabled value="">Choose...</option>
+                <option value="{{obj.city}}" ng-repeat="obj in jsonAryCity">{{obj.city}}</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            Seats :
+            <select class="form-select" ng-model="selSeat" style="width: 200px;" required>
+                <option selected disabled value="">Choose...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4/+">4/+</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <input type="button" class="btn btn-dark signup-btn" name="fetchme" id="fetchme" ng-click="DofetchAll();"
+                value="Find a Ride">
+        </div>
+    </div>
+
+    <center>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" ng-repeat="obj in jsonAryVehicle">
+                    <div class="card">
+                        <img src="uploads/{{obj.picpath}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p>Name:{{obj.uid}}</p>
+                            <p class="card-text">
+                                Address : {{obj.address}}
+                            </p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#exampleModal" ng-click="doShowMobile(obj);">
+                                Contact Me
+                            </button>
+                        </div>
+                        <p>
+                        <div id={{obj.uid}}></div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Contact Me</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Mobile Number : {{splObj.mobnumber}}
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Document</title>
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+    function doShowPrev1(ref) {
+            var image = document.getElementById('prev');
+            image.src = URL.createObjectURL(ref.files[0]);
+        }
+        function doShowPrev2(ref) {
+            var image = document.getElementById('previ');
+            image.src = URL.createObjectURL(ref.files[0]);
+        }
+    </script>
+</head>
+
+<body style="background-color: rgb(187, 135, 117);">
+    <div class="vehicle-box">
+        <form method="post" enctype="multipart/form-data" class="row g-3">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Username</label>
+                <input type="text" name="uid" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Vehicle Number</label>
+                <input type="text" name="txtvnumber" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">Model</label>
+                <input type="text" name="txtmodel" class="form-control" id="validationCustom03" required>
+                <div class="invalid-feedback">
+                    This model does not exist
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">Permit Type</label>
+                <select class="form-select" name="combopermit" id="validationCustom04" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option value="local">Local</option>
+                    <option value="state">State</option>
+                    <option value="national">National</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom05" class="form-label">Company</label>
+                <input type="text" class="form-control" name="txtcompany" id="validationCustom05" required>
+                <div class="invalid-feedback">
+                    Please provide a valid Company.
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom04" class="form-label">Number of Seats</label>
+                <select class="form-select" name="comboseat" id="validationCustom04" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4+">4+</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">Manufacturing Year</label>
+                <input type="text" name="txtyear" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <label for="inputState" class="form-label">Fuel Type</label>
+                <select id="inputState" name="combofuel" class="form-select">
+                    <option disabled selected>Choose...</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="CNG">CNG</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="inputZip" class="form-label">Minimum Charges</label>
+                <input type="text" name="txtmincharge" class="form-control" id="inputZip">
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Check me out
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">1st pic</label>
+                <input type="file" name="ppic" id="ppic" onchange="doShowPrev2(this);"> <br>
+                <img src="pics/kisspng-user-logo-information-service-design-5ba34f88e63387.4679724515374293849429.png   "
+                    width="100" height="100" id="previ">
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">2nd Pic</label>
+                <input type="file" name="pppic" id="pppic" onchange="doShowPrev1(this);"> <br>
+                <img src="pics/kisspng-user-logo-information-service-design-5ba34f88e63387.4679724515374293849429.png   "
+                    width="100" height="100" id="prev">
+            </div>
+            <div class="col-12">
+                <input type="submit" value="Save" name="save" id="save" formaction="/vehicle-save"> 
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
